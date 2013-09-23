@@ -1,0 +1,106 @@
+<html>
+	<head>
+		<script src="PokerKata.js"></script>
+		<script>
+			function test (resultado, esperado) {
+				if(resultado === esperado) {
+					console.log("test passed");
+				} else {
+					console.log("test error: " + resultado + " <> " + esperado);
+				}
+			}
+			
+            console.log('One Pair');
+			var OnePair = new Hand([
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.Three, CardColour.Spades),
+				new Card(CardNumber.Four, CardColour.Heart),
+				new Card(CardNumber.Five, CardColour.Heart)
+			]);
+			test(OnePair.validateHand(), HandPoker.OnePair);
+			
+            console.log('Two Pair');
+			var TwoPair = new Hand([
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.Three, CardColour.Spades),
+				new Card(CardNumber.Three, CardColour.Heart),
+				new Card(CardNumber.Two, CardColour.Heart)
+			]);
+			test(TwoPair.validateHand(), HandPoker.TwoPair);
+			
+            console.log('Three of a Kind');
+			var ThreeOfAKind = new Hand([
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.Five, CardColour.Heart),
+				new Card(CardNumber.Three, CardColour.Heart),
+				new Card(CardNumber.A, CardColour.Spades)
+			]);
+			test(ThreeOfAKind.validateHand(), HandPoker.ThreeOfAKind);
+			
+            console.log('Straight');
+			var Straight = new Hand([
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.Two, CardColour.Clubs),
+				new Card(CardNumber.Three, CardColour.Heart),
+				new Card(CardNumber.Four, CardColour.Heart),
+				new Card(CardNumber.Five, CardColour.Heart)
+			]);
+			test(Straight.validateHand(), HandPoker.Straight);
+			
+            console.log('Flush');
+			var Flush = new Hand([
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.Two, CardColour.Heart),
+				new Card(CardNumber.Three, CardColour.Heart),
+				new Card(CardNumber.Q, CardColour.Heart),
+				new Card(CardNumber.Five, CardColour.Heart)
+			]);
+			test(Flush.validateHand(), HandPoker.Flush);
+			
+            console.log('FullHouse');
+			var FullHouse = new Hand([
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.Five, CardColour.Heart),
+				new Card(CardNumber.Five, CardColour.Heart)
+			]);
+			test(FullHouse.validateHand(), HandPoker.FullHouse);
+			
+            console.log('Poker');
+			var Poker = new Hand([
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.Five, CardColour.Heart)
+			]);
+			test(Poker.validateHand(), HandPoker.Poker);
+			
+            console.log('StraightFlush');
+			var StraightFlush = new Hand([
+				new Card(CardNumber.Two, CardColour.Heart),
+				new Card(CardNumber.Three, CardColour.Heart),
+				new Card(CardNumber.Four, CardColour.Heart),
+				new Card(CardNumber.Five, CardColour.Heart),
+				new Card(CardNumber.Six, CardColour.Heart)
+			]);
+			test(StraightFlush.validateHand(), HandPoker.StraightFlush);
+			
+            console.log('RoyalFlush');
+			var RoyalFlush = new Hand([
+				new Card(CardNumber.A, CardColour.Heart),
+				new Card(CardNumber.Two, CardColour.Heart),
+				new Card(CardNumber.Four, CardColour.Heart),
+				new Card(CardNumber.Three, CardColour.Heart),
+				new Card(CardNumber.K, CardColour.Heart)
+			]);
+			test(RoyalFlush.validateHand(), HandPoker.RoyalFlush);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
